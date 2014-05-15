@@ -1,0 +1,89 @@
+<div class="slider-inner component-inner">
+    {{#if title}}
+        <div class="slider-title component-title">
+            <h4 class="slider-title-inner component-title-inner">
+                {{{title}}}
+            </h4>
+        </div>
+    {{/if}}
+    {{#if body}}
+        <div class="slider-body component-body">
+            <div class="slider-body-inner component-body-inner">
+                {{{body}}}
+            </div>
+        </div>
+    {{/if}}
+    <div class="slider-widget component-widget {{#unless _isEnabled}} disabled {{#if _isComplete}} complete submitted user {{#if _isCorrect}}correct{{/if}} {{/if}} {{/unless}}">
+        <div class="slider-holder clearfix">
+            <div class="slider-scale-labels">
+                <div class="slider-scale-start">{{labelStart}}</div>
+                <div class="slider-scale-end">{{labelEnd}}</div>
+            </div>
+            <div class="slider-scaler">
+                <div class="slider-modelranges"></div>
+                <div class="slider-markers"></div>
+                <div class="slider-answer"></div>
+                <div class="slider-scale-marker"></div>
+            </div>
+            <div class="slider-background">
+                <div class="slider-item item {{#unless _isEnabled}}{{#if correct}}correct{{else}}incorrect{{/if}}{{/unless}}">
+
+                    <div class="slider-sliderange">
+                        <a href="#" class="slider-handle"></a>
+
+                        <div class="slider-bar"></div>
+                    </div>
+                    <div class="slider-outer-bar">
+                        <div class="slider-item-state">
+                            <div class="slider-icon slider-correct-icon icon icon-tick"></div>
+                            <div class="slider-icon slider-incorrect-icon icon icon-cross"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class='slider-container'>
+            {{#each items}}
+                <div class="slider-items">
+                    <div class="slider-items-title">{{title}}</div>
+                    <div class="slider-items-body">{{body}}</div>
+                    {{#if itemAudioSrc}}
+                        <div class="slider-items-audio ">
+                            <audio preload='metadata'>
+                                {{#each audioTypes}}
+                                    <source src="{{{../itemAudioSrc}}}.{{type}}" type="{{{codec}}}">
+                                {{/each}}
+                            </audio>
+                        </div>
+                    {{/if}}
+                </div>
+            {{/each}}
+        </div>
+        <div class="buttons">
+            <a href="#" class="button submit">
+            <span>
+                {{{buttons.submit}}}
+            </span>
+            </a>
+            <a href="#" class="button reset">
+            <span>
+                {{{buttons.reset}}}
+            </span>
+            </a>
+            <a href="#" class="button model">
+            <span>
+                {{{buttons.showCorrectAnswer}}}
+            </span>
+            </a>
+
+            <a href="#" class="button user">
+            <span>
+                {{{buttons.hideCorrectAnswer}}}
+            </span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+var length=this.model.get("text").length
+            for(var i=0;i<length;i++)
+            {
+                if(i==itemIndex){
+                    this.$el.find(".slider-info").text(this.model.get("text")[i]);
+                }
+            }
+
+
+var length=this.model.get("text").length
+            for(var i=0;i<length;i++)
+            {
+                if(i==itemIndex){
+                    this.$el.find(".slider-info").text(this.model.get("text")[i]);
+                }
+            }
+
+
+
+var length=this.model.get("text").length
+            for(var i=0;i<length;i++)
+            {
+                if(i==left){
+                    this.$el.find(".slider-info").text(this.model.get("text")[i]);
+                }
+            }
